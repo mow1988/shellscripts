@@ -10,5 +10,14 @@ mkdir -p $logDir
 mkdir -p $dstDir
 
 cmd="tar -zcvf $dstDir/$dstFile $srcDir/*"
-
-$cmd > $logFile
+echo "=====================# START: backup.sh #========================" >> $logFile
+echo "start: $(date)" >> $logFile
+echo "src: $srcDir" >> $logFile
+echo "dst: $dstDir/$dstFile" >> $logFile
+echo "cmd: $cmd" >> $logFile
+echo "=================================================================" >> $logFile
+$cmd >> $logFile
+echo "==============================================================" >> $logFile
+echo "finished: $(date)" >> $logFile
+ls -lha $dstDir/$dstFile >> $logFile
+echo "====================# END: backup.sh #========================" >> $logFile
