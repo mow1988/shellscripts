@@ -16,7 +16,9 @@ echo "src: $srcDir" >> $logFile
 echo "dst: $dstDir/$dstFile" >> $logFile
 echo "cmd: $cmd" >> $logFile
 echo "=================================================================" >> $logFile
+
 $cmd >> $logFile
+
 echo "==============================================================" >> $logFile
 echo "finished: $(date)" >> $logFile
 ls -lha $dstDir/$dstFile >> $logFile
