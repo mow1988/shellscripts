@@ -23,3 +23,5 @@ echo "==============================================================" >> $logFil
 echo "finished: $(date)" >> $logFile
 ls -lha $dstDir/$dstFile >> $logFile
 echo "====================# END: backup.sh #========================" >> $logFile
+
+ln -sf $logFile $dstDir/$1.last.log
