@@ -20,12 +20,12 @@ echo ""
 echo "========================"      >> $tmp
 echo "BACKUP: Docker Volumes:"       >> $tmp
 echo "========================"      >> $tmp
-grep "finished:" /var/backups/docker-volumes/docker-volumes.last.log >> $tmp
+grep "finished:" /opt/backups/docker-volumes/docker-volumes.last.log >> $tmp
 
 echo ""
 echo "========================"      >> $tmp
 echo "BACKUP: Docker Projects:"      >> $tmp
 echo "========================"      >> $tmp
-grep "finished:" /var/backups/docker-projects/docker-projects.last.log >> $tmp
+grep "finished:" /opt/backups/docker-projects/docker-projects.last.log >> $tmp
 
 cat $tmp | mail -s $mailSub $mailTo
