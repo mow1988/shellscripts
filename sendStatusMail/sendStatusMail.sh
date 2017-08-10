@@ -7,19 +7,10 @@ tmp=/tmp/sendStatusMail.tmp
 rm -f $tmp
 apt-get update >/dev/null
 
-echo "========================"      >> $tmp
-echo "Uptime:" 		             >> $tmp
-echo "========================"      >> $tmp
-uptime >> $tmp
+echo "Uptime: $(uptime)" 		                                 >> $tmp
+echo "Package updates: $(apt-get --just-print upgrade|grep 'upgraded') " >> $tmp
 
-echo "" >> $tmp
-echo "========================"      >> $tmp
-echo "Package updates:"              >> $tmp
-echo "========================"      >> $tmp
-apt-get --just-print upgrade | grep 'upgraded'  >> $tmp
-
-
-echo "" >> $tmp
+echo ""
 echo "========================"      >> $tmp
 echo "Docker container status:"      >> $tmp
 echo "========================"      >> $tmp
